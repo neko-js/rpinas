@@ -23,18 +23,21 @@ services:
     restart: unless-stopped
   
   postgres:
+    container_name: postgres
     image: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: example
   
   adminer:
+    container_name: adminer
     image: adminer
     restart: always
     ports:
       - 8080:8080
   
   gitlab-runner:
+    container_name: gitlab-runner
     # Register a runner: docker run --rm -it -v ./gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
     # 
     image: gitlab/gitlab-runner:latest
