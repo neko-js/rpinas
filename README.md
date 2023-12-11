@@ -58,8 +58,7 @@ This will clone this repo and start the installation script, which will install 
 ```
 sudo apt-get install -y git \
 && git clone https://github.com/neko-js/rpihole.git \
-&& cd rpihole \
-&& sudo bash ./install.sh
+&& sudo bash ./rpinas/install.sh
 ```
 
 Post Docker installation steps:
@@ -72,6 +71,7 @@ sudo groupadd docker \
 
 Download and run Pi-hole:
 ```
+cd rpinas \
 sudo bash ./post-install.sh
 ```
 
