@@ -30,14 +30,23 @@ echo "[$HOSTNAME-home]
  directory mask=0750
  public=no
 
-[$HOSTNAME]
+[$HOSTNAME-public]
  comment=$HOSTNAME-public
  path=/mnt/hdd1/public
  browseable=yes
  only guest=no
  create mask=0740
  directory mask=0750
- public=yes" >> /etc/samba/smb.conf
+ public=yes
+
+[$HOSTNAME-hdd]
+ comment=$HOSTNAME-hdd
+ path=/mnt/hdd1/
+ browseable=yes
+ only guest=no
+ create mask=0740
+ directory mask=0750
+ public=no" >> /etc/samba/smb.conf
 
 # Set Samba user
 smbpasswd -a $USER
