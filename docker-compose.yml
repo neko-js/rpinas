@@ -15,8 +15,8 @@ services:
       WEBPASSWORD: 'pihole123' # Set your password
     # Volumes store your data between container upgrades
     volumes:
-      - './pihole:/etc/pihole'
-      - './pihole-data/dnsmasq.d:/etc/dnsmasq.d'
+      - '~/pihole/config:/etc/pihole'
+      - '~/pihole/data/dnsmasq.d:/etc/dnsmasq.d'
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
       - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
@@ -39,10 +39,10 @@ services:
   gitlab-runner:
     container_name: gitlab-runner
     # Register a runner: docker run --rm -it -v ./gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
-    # 
+    # Add "/var/run/docker.sock:/var/run/docker.sock" to volumes in config.toml if executor is docker
     image: gitlab/gitlab-runner:latest
     volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
-    - './gitlab-runner/config:/etc/gitlab-runner'
+    - '~/gitlab-runner/config:/etc/gitlab-runner'
     restart: always
     
