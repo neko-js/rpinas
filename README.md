@@ -57,7 +57,7 @@ Run the following commands.
 This will clone this repo and start the installation script, which will install Samba and Docker. You have to type your password during installation once and retype it again.
 ```
 sudo apt-get install -y git \
-&& git clone https://github.com/neko-js/rpihole.git \
+&& git clone https://github.com/neko-js/rpinas.git \
 && sudo bash ./rpinas/install.sh
 ```
 
