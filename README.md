@@ -71,8 +71,7 @@ sudo groupadd docker \
 
 Download and run Pi-hole:
 ```
-cd rpinas \
-sudo bash ./post-install.sh
+docker compose -d -f rpinas/docker-compose.yml up
 ```
 
 ## Post Installation Steps
